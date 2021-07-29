@@ -14,6 +14,9 @@ var UserSchema = new Schema({
   password: {
     type: String
   },
+  bookWishList : [
+    {type: mongoose.Schema.Types.ObjectId,ref:'Book'}
+  ],
   created: {
     type: Date,
     default: Date.now

@@ -1,5 +1,5 @@
 'use strict';
-var mongoose = require('mongoose'), bcrypt = require('bcrypt'), Schema = mongoose.Schema;
+var mongoose = require('mongoose'), Schema = mongoose.Schema;
 
 /**
  * Book Schema

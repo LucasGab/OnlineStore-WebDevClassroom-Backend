@@ -4,8 +4,8 @@ var express = require('express'),
 cors = require('cors'),
 app = express(),
 port = process.env.PORT || 4000,
-User = require('./api/models/userModel'),
 Book = require('./api/models/bookModel'),
+User = require('./api/models/userModel'),
 jsonwebtoken = require("jsonwebtoken");
 
 app.use(express.json());
@@ -40,12 +40,11 @@ app.use(function(req, res, next) {
   }
 });
 
-var routesUser = require('./api/routes/userRoute');
-routesUser(app);
-
 var routesBook = require('./api/routes/bookRoute');
 routesBook(app);
 
+var routesUser = require('./api/routes/userRoute');
+routesUser(app);
 
 app.use(function(req, res) {
   res.status(404).send({ url: req.originalUrl + ' not found' })
